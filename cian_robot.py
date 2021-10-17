@@ -78,9 +78,9 @@ class CianApi:
                     )
                     self.cookies = response.cookies
                     return
-            except Exception:
+            except Exception as ex:
                 await asyncio.sleep(self.DELAY)
-                self.log.error(f'Error occurred while trying to get new cookies: {response}')
+                self.log.error(f'Error occurred while trying to get new cookies: {ex}')
 
     async def get_offers(self):
         responses_list = []
@@ -177,9 +177,8 @@ def goodbye():
 
 if __name__ == '__main__':
     work_machine = CianApi()
-    true = True
 
-    while True and true:
+    while True:
         offers = asyncio.get_event_loop().run_until_complete(work_machine.get_offers())
         new_offers = []
 
