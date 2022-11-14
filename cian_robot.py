@@ -22,7 +22,6 @@ class CianApi:
     GET_TOKEN = "sopr-experiments/listing-user-activity-time/"
     ADMINS = {
         2434894834389: 'Mr mouse',
-        3479032387647: 'Mrs tiger',
     }
     DELAY = 5
     HEADERS = {
